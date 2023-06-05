@@ -52,7 +52,7 @@
         android:src="@drawable/ic_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:tint="@color/white "
+        android:tint="@color/white"
         />
     
     <TextView
@@ -78,6 +78,7 @@
         android:id="@+id/viewSupporter"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:background="@color/primary"
         android:layout_marginTop="@dimen/_12sdp"
         app:layout_constraintTop_toBottomOf="@id/imageBack"
 
@@ -91,6 +92,7 @@
         android:orientation="vertical"
         android:overScrollMode="never"
         android:padding="@dimen/_20sdp"
+        app:stackFromEnd="true"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
@@ -118,11 +120,8 @@
         android:background="@drawable/background_chat_input"
          app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        
         >
-        
 
-        
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -133,12 +132,14 @@
             android:src="@drawable/ic_send"
             android:tint="@color/white"
             />
+    </FrameLayout>
         <EditText
             android:id="@+id/inputMessage"
             android:layout_width="0dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginRight="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_12sdp"
             android:background="@drawable/background_chat_input"
@@ -147,11 +148,11 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:paddingStart="@dimen/_16sdp"
-
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/layoutSend"
+            app:layout_constraintStart_toStartOf="parent"
             />
-
-    </FrameLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
